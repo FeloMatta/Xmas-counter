@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #3535ec;
+    font-family: 'Livvic', sans-serif;
+}
+
+.container{
+
+}
