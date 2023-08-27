@@ -1,0 +1,33 @@
+// dom elements
+const daysElm = document.querySelector('#days');
+const hoursElm = document.querySelector('#hours');
+const minutesElm = document.querySelector('#minutes');
+const secondsElm = document.querySelector('#seconds');
+
+// data di natale
+const endDate = new Date("december 25 2023");
+const endDateInMs = endDate.getTime();
+
+
+// tabella in ms
+const secondInMs = 1000;
+const minuteInMs = 60 * secondInMs;
+const hourInMs = 60 * minuteInMs;
+const dayInMs = 24 * hourInMs;
+
+
+
+
+const counterTimer = setInterval(timer, 1000);
+
+function timer(){
+    // oggi in ms
+    const nowInMs = new Date().getTime();
+    
+    const diff = endDateInMs - nowInMs;
+
+    daysElm.innerHTML = Math.floor(diff / dayInMs);
+    hoursElm.innerHTML = Math.floor((diff % dayInMs) / hourInMs);
+    minutesElm.innerHTML = Math.floor((diff % hourInMs) / minuteInMs);
+    secondsElm.innerHTML = Math.floor((diff % minuteInMs) / secondInMs);
+}
