@@ -3,6 +3,7 @@ const daysElm = document.querySelector('#days');
 const hoursElm = document.querySelector('#hours');
 const minutesElm = document.querySelector('#minutes');
 const secondsElm = document.querySelector('#seconds');
+const panelElm = document.querySelector('.panel');
 
 // data di natale
 const endDate = new Date("december 25 2023");
@@ -26,8 +27,13 @@ function timer(){
     
     const diff = endDateInMs - nowInMs;
 
-    daysElm.innerHTML = Math.floor(diff / dayInMs);
-    hoursElm.innerHTML = Math.floor((diff % dayInMs) / hourInMs);
-    minutesElm.innerHTML = Math.floor((diff % hourInMs) / minuteInMs);
-    secondsElm.innerHTML = Math.floor((diff % minuteInMs) / secondInMs);
+    if (false) {
+        daysElm.innerHTML = Math.floor(diff / dayInMs);
+        hoursElm.innerHTML = Math.floor((diff % dayInMs) / hourInMs);
+        minutesElm.innerHTML = Math.floor((diff % hourInMs) / minuteInMs);
+        secondsElm.innerHTML = Math.floor((diff % minuteInMs) / secondInMs);
+    } else {
+        clearInterval(timer);
+        panelElm.innerHTML = "<h1>Buon Natale!🎅</h1>"
+    }
 }
