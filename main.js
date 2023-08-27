@@ -27,7 +27,7 @@ function timer(){
     
     const diff = endDateInMs - nowInMs;
 
-    if (false) {
+    if (diff > 0) {
         daysElm.innerHTML = Math.floor(diff / dayInMs);
         hoursElm.innerHTML = Math.floor((diff % dayInMs) / hourInMs);
         minutesElm.innerHTML = Math.floor((diff % hourInMs) / minuteInMs);
